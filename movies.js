@@ -1,4 +1,4 @@
-export const moviesDb =
+const moviesDb =
 [
   {
     Title: 'Batman v Superman: Dawn of Justice',
@@ -1363,3 +1363,4 @@ export const moviesDb =
       'https://m.media-amazon.com/images/M/MV5BMDZkMTUxYWEtMDY5NS00ZTA5LTg3MTItNTlkZWE1YWRjYjMwL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg'
   }
 ]
+export default moviesDb
