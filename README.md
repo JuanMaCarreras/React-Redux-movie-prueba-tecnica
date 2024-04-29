@@ -9,11 +9,17 @@ Crear una pequeña aplicación utilizando React y Redux que muestre películas c
 ### Instrucciones
 
 1. Crea una nueva aplicación de React.
+
 2. Configura y aplica Redux en tu aplicación.
+
 3. Crea un componente MovieCard.jsx que renderice la información de una película, como el título, el año y la imágen como mínimo.
+
 4. Crea un componente principal llamado MovieList.jsx que sea responsable de mostrar una lista de películas. Este componente debe recibir los datos de las películas desde Redux y renderizar varios componentes MovieCard en función de la configuración de paginación.
+
 5. Implementa la funcionalidad de paginación utilizando Redux. Debes tener un estado en Redux que almacene la cantidad de películas que se deben mostrar por página.
+
 6. Agrega botones en la interfaz de usuario que permitan incrementar y decrementar la cantidad de películas por página. Al hacer clic en estos botones, se debe actualizar el estado de Redux y la lista de películas debe reaccionar dinámicamente a este cambio.
+
 7. Utiliza Redux para administrar el estado de la paginación y la lista de películas.
 
 ###
