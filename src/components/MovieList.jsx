@@ -1,39 +1,54 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import MovieCard from './MovieCard'
 import { setMoviesPerPage } from '../redux/actions'
-import moviesDB from '../../movies.js'
 import style from '../style/MovieList.module.css'
+import Button from './Button'
 
 function MovieList () {
-  const movies = moviesDB
+  const allMovies = useSelector(state => state.movies)
   const moviesPerPage = useSelector(state => state.moviesPerPage)
   const dispatch = useDispatch()
 
+  const [totalMoviesToShow, setTotalMoviesToShow] = useState(10)
+
+  useEffect(() => {
+    setTotalMoviesToShow(moviesPerPage)
+  }, [moviesPerPage])
+
+  const moviesToShow = allMovies.slice(0, totalMoviesToShow)
+
   const handleIncrement = () => {
-    dispatch(setMoviesPerPage(moviesPerPage + 1))
+    const newTotalMoviesToShow = totalMoviesToShow + 10
+    setTotalMoviesToShow(newTotalMoviesToShow)
+    dispatch(setMoviesPerPage(newTotalMoviesToShow))
   }
 
   const handleDecrement = () => {
-    if (moviesPerPage > 1) {
-      dispatch(setMoviesPerPage(moviesPerPage - 1))
+    if (totalMoviesToShow > 10) {
+      const newTotalMoviesToShow = totalMoviesToShow - 10
+      setTotalMoviesToShow(newTotalMoviesToShow)
+      dispatch(setMoviesPerPage(newTotalMoviesToShow))
     }
   }
+
   return (
     <div className={style.container}>
-      {
-        movies && movies.map(movie => (
+      <div>
+        {moviesToShow && moviesToShow.map(movie => (
           <MovieCard
             key={movie.imdbID}
             title={movie.Title}
             year={movie.Year}
             poster={movie.Poster}
           />
-        ))
-      }
-      <button onClick={handleDecrement}>-</button>
-      <span>{moviesPerPage} películas por página</span>
-      <button onClick={handleIncrement}>+</button>
+        ))}
+      </div>
+      <div>
+        <Button onClick={handleDecrement}>-</Button>
+        <span>{moviesPerPage} películas por página</span>
+        <Button onClick={handleIncrement}>+</Button>
+      </div>
     </div>
   )
 }
