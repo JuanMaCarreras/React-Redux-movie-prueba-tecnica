@@ -9,10 +9,9 @@ const MovieDivCard = styled.article`
 function MovieCard ({ title, year, poster }) {
   return (
     <MovieDivCard>
-      <h2 className={style.title}>{title}</h2>
-      <p className={style.year}>{year}</p>
+      <h2>{title}</h2>
+      <p>{year}</p>
       <img
-        className={style.img}
         src={poster}
         alt={title}
       />
