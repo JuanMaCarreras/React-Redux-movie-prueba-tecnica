@@ -1,9 +1,14 @@
 import React from 'react'
-import style from '../style/MovieCard.module.css'
+import styled from 'styled-components'
+
+const MovieDivCard = styled.article`
+    border: solid 2px red;
+
+`
 
 function MovieCard ({ title, year, poster }) {
   return (
-    <article className={style.container}>
+    <MovieDivCard>
       <h2 className={style.title}>{title}</h2>
       <p className={style.year}>{year}</p>
       <img
@@ -11,7 +16,7 @@ function MovieCard ({ title, year, poster }) {
         src={poster}
         alt={title}
       />
-    </article>
+    </MovieDivCard>
   )
 }
 
