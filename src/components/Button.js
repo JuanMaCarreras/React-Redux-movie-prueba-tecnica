@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const Button = styled.button`
+export const Button = styled.button`
     background: black;
     border-radius: 1rem;
     cursor: pointer;
@@ -10,4 +10,17 @@ const Button = styled.button`
 
 `
 
-export default Button
+export const DivContiner = styled.div`
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-left: 17px;
+    padding-right: 17px;
+`
+
+export const DivMovie = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+`
