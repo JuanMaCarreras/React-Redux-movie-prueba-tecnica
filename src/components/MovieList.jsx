@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import MovieCard from './MovieCard'
 import { setMoviesPerPage } from '../redux/actions'
-import style from '../style/MovieList.module.css'
-import Button from './Button'
+import { Button, DivContiner, DivMovie } from './Button'
 
 function MovieList () {
   const allMovies = useSelector(state => state.movies)
@@ -33,8 +32,8 @@ function MovieList () {
   }
 
   return (
-    <div className={style.container}>
-      <div>
+    <DivContiner>
+      <DivMovie>
         {moviesToShow && moviesToShow.map(movie => (
           <MovieCard
             key={movie.imdbID}
@@ -43,13 +42,13 @@ function MovieList () {
             poster={movie.Poster}
           />
         ))}
-      </div>
+      </DivMovie>
       <div>
         <Button onClick={handleDecrement}>-</Button>
         <span>{moviesPerPage} películas por página</span>
         <Button onClick={handleIncrement}>+</Button>
       </div>
-    </div>
+    </DivContiner>
   )
 }
 
