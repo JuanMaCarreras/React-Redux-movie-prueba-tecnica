@@ -1,12 +1,14 @@
-.container {
+/* .container {
+    display: flex;
+    flex-direction: column;
     border: solid red 2px;
     text-align: center;
     padding-left: 17px;
     padding-right: 17px;
-}
+} */
 
 .title {
-    word-break: break-all;
+    word-wrap: break-word;
 }
 
 .img {
