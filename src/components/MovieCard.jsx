@@ -1,17 +1,12 @@
 import React from 'react'
-import styled from 'styled-components'
-
-const MovieDivCard = styled.article`
-    border: solid 2px red;
-
-`
+import { Image, Title, MovieDivCard } from './Styled.components'
 
 function MovieCard ({ title, year, poster }) {
   return (
     <MovieDivCard>
-      <h2>{title}</h2>
+      <Title>{title}</Title>
       <p>{year}</p>
-      <img
+      <Image
         src={poster}
         alt={title}
       />
