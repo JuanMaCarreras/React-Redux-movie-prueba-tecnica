@@ -22,11 +22,12 @@ export const DivMovie = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-
+    margin-bottom: 2.5;
 `
 
 export const MovieDivCard = styled.article`
     border: solid 2px red;
+    margin: 1rem
 
 `
 
