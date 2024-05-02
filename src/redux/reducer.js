@@ -11,12 +11,12 @@ const rootReducer = (state = initialState, action) => {
     case 'INCREMENT_PAGE':
       return {
         ...state,
-        pageNumber: state.pageNumber + 1
+        pageNumber: state.pageNumber + 10
       }
     case 'DECREMENT_PAGE':
       return {
         ...state,
-        pageNumber: state.pageNumber - 1
+        pageNumber: state.pageNumber - 10
       }
     case 'SET_MOVIES':
       return {
