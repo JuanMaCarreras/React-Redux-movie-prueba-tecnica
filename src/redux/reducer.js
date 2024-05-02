@@ -8,15 +8,25 @@ const initialState = {
 
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
+    case 'INCREMENT_PAGE':
+      return {
+        ...state,
+        pageNumber: state.pageNumber + 1
+      }
+    case 'DECREMENT_PAGE':
+      return {
+        ...state,
+        pageNumber: state.pageNumber - 1
+      }
+    case 'SET_MOVIES':
+      return {
+        ...state,
+        movies: action.payload
+      }
     case 'SET_MOVIES_PER_PAGE':
       return {
         ...state,
         moviesPerPage: action.payload
-      }
-    case 'SET_PAGE':
-      return {
-        ...state,
-        pageNumber: action.payload
       }
     default:
       return state
