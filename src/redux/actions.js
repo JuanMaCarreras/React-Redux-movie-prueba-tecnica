@@ -1,9 +1,26 @@
-export const setPage = (pageNumber) => ({
-  type: 'SET_PAGE',
-  payload: pageNumber
-})
 
-export const setMoviesPerPage = (perPage) => ({
-  type: 'SET_MOVIES_PER_PAGE',
-  payload: perPage
-})
+export const incrementPage = () => {
+  return {
+    type: 'INCREMENT_PAGE'
+  }
+}
+
+export const decrementPage = () => {
+  return {
+    type: 'DECREMENT_PAGE'
+  }
+}
+
+export const setMovies = (movies) => {
+  return {
+    type: 'SET_MOVIES',
+    payload: movies
+  }
+}
+
+export const setMoviesPerPage = (perPage) => {
+  return {
+    type: 'SET_MOVIES_PER_PAGE',
+    payload: perPage
+  }
+}
