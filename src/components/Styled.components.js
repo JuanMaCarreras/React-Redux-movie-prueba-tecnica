@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import img from '../assets/bg.jpg'
 
 export const Button = styled.button`
     background: black;
@@ -16,6 +17,7 @@ export const DivContiner = styled.div`
     text-align: center;
     padding-left: 17px;
     padding-right: 17px;
+    background-image: url(${img})
 `
 
 export const DivMovie = styled.div`
